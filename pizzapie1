@@ -1,0 +1,10 @@
+#pizza
+def pizza 
+	crust
+	[true, false].sample 
+	p crust
+	crust= ["pan", "butter crust"]
+	extra= ["xcheese", "expep"]
+	meats= ["ham", "sausage", "peperoni", "hamburger"]
+	veggies = ["peppers", "onion", "tomatoe"]
+	sauces = ["auceb"]
