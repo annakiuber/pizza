@@ -120,4 +120,8 @@ totalcost = before_taxes + tax
 
 puts "your total cost with taxes will be $#{totalcost}."
 
+if pizzas >= 10
+	print "put down the pizza dude.....go on a diet!!!!"
+end
+
 end
