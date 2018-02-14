@@ -18,7 +18,7 @@ puts "would you like pan or butter crust?"
 		crustfee += 0
 end
 extracheesefee = 0
-puts "would you like extre cheese?"
+puts "would you like extre cheese yes/no?"
 	extracheesechoice = gets.chomp
 	if extracheesechoice == "yes"
 		extracheesefee += 1.00
@@ -26,8 +26,18 @@ puts "would you like extre cheese?"
 		extracheesefee += 0
 	end
 
+extrapepfee = 0
+puts "would you like extra pepporoni yes/no?"
+	if extrapepchoice = gets.chomp
+	if extrapepchoice == "yes"
+		extrapepfee += 1.00
+	else
+		extrapepfee += 1.00
+	end
+
+
 veggiefee = 0
-puts "would you like 0, 1 or two veggie toppings"
+puts "would you like 0, 1 or 2 veggie toppings"
 	veggiechoice = gets.chomp
 	if veggiechoice == "0"
 		veggiefee += 0
@@ -59,12 +69,13 @@ pizza = 1
 while pizza <= pizzas do
 	meat = meats.sample
 	if meat == "anchovies"
-	 puts "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwwwwwwww"
+	 puts "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwwwwwwww  HA HA HA HA you got Anchovied!!!!!"
 	end
 
-puts "You ordered #{pizzas} pizza, with #{crust_choice}, your extras will be #{extra.sample},
-your meats will be #{meats.sample}, your veggies will be #{veggies.sample} and #{veggies.sample}, and your 
-sauces will be #{sauces.sample}"
+
+
+puts "You ordered #{pizzas} pizza, with #{crust_choice}, with #{extracheesechoice} extra cheese,
+and #{meatchoice} topings of meat, with #{veggiechoice} veggie toppings, and sauced with #{sauces.sample}"
 
 
 	puts pizza
@@ -90,14 +101,12 @@ tip_percent = tip_input/100
 tip = cost * tip_percent
 
 tax = 0.07
-before_taxes = cost + fee + crustfee + extracheesefee + veggiefee + meatfee
+before_taxes = cost + fee + crustfee + extracheesefee + veggiefee + meatfee + extrapepfee
 salestax = tax * before_taxes.to_f
 
 
-totalcost = cost + tip + fee + crustfee + extracheesefee + veggiefee + meatfee + salestax
+totalcost = before_taxes + tax
 
+puts "your total cost with taxes will be $#{totalcost}."
 
-
-
-puts "your total cost will be $#{totalcost}."
-
+end
