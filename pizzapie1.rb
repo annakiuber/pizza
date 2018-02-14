@@ -5,10 +5,22 @@ meats= ["ham", "sausage", "peperoni", "hamburger" , "anchovies"]
 veggies = ["peppers", "onion", "tomatoe"]
 sauces = ["barbeque", "extra marinera"]
 
-puts "how many random pizzas do you want?"
+puts "how many random pizzas would you like?"
 	pizzas = gets.chomp.to_i
 
 puts "that will be #{pizzas}"
+
+sizefee = 0
+puts "would you like small, medium, or large?"
+	sizechoice = gets.chomp
+	if sizechoice == "small"
+		sizefee += 1.00
+	elsif sizechoice == "medium"
+		sizefee += 2.00
+	else sizechoice == "large"
+		sizefee += 3.00
+end
+
 crustfee = 0
 puts "would you like pan or butter crust?"
 	crust_choice = gets.chomp
@@ -17,6 +29,7 @@ puts "would you like pan or butter crust?"
 	else crust_choice == "butter crust"
 		crustfee += 0
 end
+
 extracheesefee = 0
 puts "would you like extre cheese yes/no?"
 	extracheesechoice = gets.chomp
@@ -62,13 +75,11 @@ puts "would you like 0,1,2,3,or 4 meat toppings?"
 		meatfee += 4.00
 	end
 		
-		
-
 
 pizza = 1
 while pizza <= pizzas do
-	meat = meats.sample
-	if meat == "anchovies"
+meat = meats.sample
+if meat == "anchovies"
 	 puts "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwwwwwwww  HA HA HA HA you got Anchovied!!!!!"
 	end
 
@@ -101,7 +112,7 @@ tip_percent = tip_input/100
 tip = cost * tip_percent
 
 tax = 0.07
-before_taxes = cost + fee + crustfee + extracheesefee + veggiefee + meatfee + extrapepfee
+before_taxes = cost + fee + crustfee + extracheesefee + veggiefee + meatfee + extrapepfee + sizefee
 salestax = tax * before_taxes.to_f
 
 
