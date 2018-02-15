@@ -1,9 +1,23 @@
 #pizza
+def crust
 crust= ["pan", "butter crust"]
+end
+ 
+def extra
 extra= ["xcheese", "expep"]
+end
+
+def meats
 meats= ["ham", "sausage", "peperoni", "hamburger" , "anchovies"]
+end
+
+def veggies
 veggies = ["peppers", "onion", "tomatoe"]
+end
+
+def sauces
 sauces = ["barbeque", "extra marinera"]
+end
 
 puts "how many random pizzas would you like?"
 	pizzas = gets.chomp.to_i
@@ -96,8 +110,7 @@ end
 cost = 10.00 * pizza
 
 fee = 0
-
- delivery = "yes", "no"
+delivery = "yes", "no"
  todaydelivery = delivery.sample
  	if todaydelivery == "yes"
 		fee = 5.0
@@ -121,7 +134,8 @@ totalcost = before_taxes + tax
 puts "your total cost with taxes will be $#{totalcost}."
 
 if pizzas >= 10
-	print "put down the pizza dude.....go on a diet!!!!"
+	print "put down the pizza dude.....go on a diet or go for a walk!!!!"
 end
+
 
 end
