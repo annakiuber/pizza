@@ -19,6 +19,8 @@ def sauces
 sauces = ["barbeque", "extra marinera"]
 end
 
+puts "welcome to Anna's pizza shack"
+
 puts "how many random pizzas would you like?"
 	pizzas = gets.chomp.to_i
 
@@ -74,6 +76,8 @@ puts "would you like 0, 1 or 2 veggie toppings"
 		veggiefee += 2.00
 	end
 
+
+
 meatfee = 0
 puts "would you like 0,1,2,3,or 4 meat toppings?"
 	meatchoice = gets.chomp
@@ -91,16 +95,16 @@ puts "would you like 0,1,2,3,or 4 meat toppings?"
 		
 
 pizza = 1
-while pizza <= pizzas do
-meat = meats.sample
-if meat == "anchovies"
+	while pizza <= pizzas do
+	meat = meats.sample
+	if meat == "anchovies"
 	 puts "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwwwwwwww  HA HA HA HA you got Anchovied!!!!!"
 	end
 
 
 
 puts "You ordered #{pizzas} pizza, with #{crust_choice}, with #{extracheesechoice} extra cheese,
-and #{meatchoice} topings of meat, with #{veggiechoice} veggie toppings, and sauced with #{sauces.sample}"
+and #{meatchoice} topings of meat one being #{meatchoice}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample}"
 
 
 	puts pizza
@@ -110,9 +114,9 @@ end
 cost = 10.00 * pizza
 
 fee = 0
-delivery = "yes", "no"
- todaydelivery = delivery.sample
- 	if todaydelivery == "yes"
+puts "would you like your pizza delivered to your home yes/no?"
+	deliverychoice = gets.chomp
+	if deliverychoice == "yes"
 		fee = 5.0
 	else 
 	fee = 0
