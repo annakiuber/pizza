@@ -19,15 +19,16 @@ def sauces
 sauces = ["barbeque", "extra marinera"]
 end
 
-puts "welcome to Anna's pizza shack"
+def pizzaorder
+	puts "welcome to Anna's pizza shack"
 
-puts "how many random pizzas would you like?"
+	puts "how many random pizzas would you like?"
 	pizzas = gets.chomp.to_i
 
-puts "that will be #{pizzas}"
+	puts "that will be #{pizzas}"
 
-sizefee = 0
-puts "would you like small, medium, or large?"
+	sizefee = 0
+	puts "would you like small, medium, or large?"
 	sizechoice = gets.chomp
 	if sizechoice == "small"
 		sizefee += 1.00
@@ -35,19 +36,19 @@ puts "would you like small, medium, or large?"
 		sizefee += 2.00
 	else sizechoice == "large"
 		sizefee += 3.00
-end
+	end
 
-crustfee = 0
-puts "would you like pan or butter crust?"
+	crustfee = 0
+	puts "would you like pan or butter crust?"
 	crust_choice = gets.chomp
 	if crust_choice == "pan"
 		crustfee += 1.00
 	else crust_choice == "butter crust"
 		crustfee += 0
-end
+	end
 
-extracheesefee = 0
-puts "would you like extre cheese yes/no?"
+	extracheesefee = 0
+	puts "would you like extre cheese yes/no?"
 	extracheesechoice = gets.chomp
 	if extracheesechoice == "yes"
 		extracheesefee += 1.00
@@ -55,18 +56,17 @@ puts "would you like extre cheese yes/no?"
 		extracheesefee += 0
 	end
 
-extrapepfee = 0
-puts "would you like extra pepporoni yes/no?"
+	extrapepfee = 0
+	puts "would you like extra pepporoni yes/no?"
 	if extrapepchoice = gets.chomp
-	if extrapepchoice == "yes"
+	elsif extrapepchoice == "yes"
 		extrapepfee += 1.00
 	else
 		extrapepfee += 1.00
 	end
 
-
-veggiefee = 0
-puts "would you like 0, 1 or 2 veggie toppings"
+	veggiefee = 0
+	puts "would you like 0, 1 or 2 veggie toppings"
 	veggiechoice = gets.chomp
 	if veggiechoice == "0"
 		veggiefee += 0
@@ -76,9 +76,7 @@ puts "would you like 0, 1 or 2 veggie toppings"
 		veggiefee += 2.00
 	end
 
-
-
-meatfee = 0
+	meatfee = 0
 puts "would you like 0,1,2,3,or 4 meat toppings?"
 	meatchoice = gets.chomp
 	if meatchoice == "0"
@@ -92,24 +90,24 @@ puts "would you like 0,1,2,3,or 4 meat toppings?"
 	else meatchoice == "4"
 		meatfee += 4.00
 	end
-		
 
 pizza = 1
-	while pizza <= pizzas do
+	until pizza == pizzas do
 	meat = meats.sample
 	if meat == "anchovies"
 	 puts "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeewwwwwwwwwwwwwwwwww  HA HA HA HA you got Anchovied!!!!!"
 	end
 
 
-
 puts "You ordered #{pizzas} pizza, with #{crust_choice}, with #{extracheesechoice} extra cheese,
-and #{meatchoice} topings of meat one being #{meatchoice}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample}"
+	and #{meatchoice} topings of meat one being #{meats.sample}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample}"
+pizza += 1
+
+end
 
 
-	puts pizza
-	pizza += 1
-end	
+
+	
 
 cost = 10.00 * pizza
 
@@ -120,7 +118,7 @@ puts "would you like your pizza delivered to your home yes/no?"
 		fee = 5.0
 	else 
 	fee = 0
-end
+	end
 
 
 puts "What percentage would you like to tip? (e.g. 15)"
@@ -143,3 +141,4 @@ end
 
 
 end
+pizzaorder
