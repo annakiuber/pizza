@@ -12,17 +12,15 @@ meats= ["ham", "sausage", "peperoni", "hamburger" , "anchovies"]
 end
 
 def veggies
-veggies = ["peppers", "onion", "tomatoe", "mushrooms"]
+veggies = ["peppers", "onion", "tomatoe"]
 end
 
 def sauces
-sauces = ["barbeque", "extra marinera", "alfredo"]
+sauces = ["barbeque", "extra marinera"]
 end
 
 def pizzaorder
-	puts "welcome to Anna's random pizza shack"
-
-
+	puts "welcome to Anna's pizza shack"
 
 	puts "how many random pizzas would you like?"
 	pizzas = gets.chomp.to_i
@@ -93,7 +91,7 @@ puts "would you like 0,1,2,3,or 4 meat toppings?"
 		meatfee += 4.00
 	end
 
-pizza = 0
+pizza = 1
 	until pizza == pizzas do
 	meat = meats.sample
 	if meat == "anchovies"
@@ -101,7 +99,8 @@ pizza = 0
 	end
 
 
-
+puts "You ordered #{pizzas} pizza, with #{crust_choice}, with #{extracheesechoice} extra cheese,
+	and #{meatchoice} topings of meat one being #{meats.sample}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample}"
 pizza += 1
 
 end
@@ -134,26 +133,12 @@ salestax = tax * before_taxes.to_f
 
 totalcost = before_taxes + tax
 
-pizzamaker = 0
-while pizzamaker < pizzas
-	if pizzas <= 1
-	puts "You ordered #{pizzas} pizza (s), with #{crust_choice}, with #{extracheesechoice} extra cheese,
-	and #{meatchoice} topings of meat one being #{meats.sample}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample} " * pizzas
-	elsif pizzas >= 1
-		puts "SSSSSSSEEEEEEEEEEEEEEMMMMMMMMMMMMMMMMMEEEEEEEE"
-	end
-	pizzamaker += 1
-end
-
-
 puts "your total cost with taxes will be $#{totalcost}."
 
-puts "test"
-
-
-# # if pizzas >= 10
-# # 	print "put down the pizza dude.....go on a diet or go for a walk!!!!"
-# end
+if pizzas >= 10
+print "put down the pizza dude.....go on a diet or go for a walk!!!!"
+end
+ 
 
 
 end
