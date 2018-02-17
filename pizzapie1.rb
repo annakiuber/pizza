@@ -16,7 +16,7 @@ veggies = ["peppers", "onion", "tomatoe", "mushrooms"]
 end
 
 def sauces
-sauces = ["barbeque", "extra marinera", "alfredo"]
+sauces = ["barbeque", "extra marinera", "alfredo", "cheeseburger pizzasauce"]
 end
 
 def pizzaorder
@@ -59,7 +59,7 @@ def pizzaorder
 	end
 
 	extrapepfee = 0
-	puts "would you like extra pepporoni yes/no?"
+	puts "would you like extra pepperoni yes/no?"
 	if extrapepchoice = gets.chomp
 	elsif extrapepchoice == "yes"
 		extrapepfee += 1.00
@@ -68,28 +68,32 @@ def pizzaorder
 	end
 
 	veggiefee = 0
-	puts "would you like 0, 1 or 2 veggie toppings"
+	puts "Would you like 0,1,2,3 or 4 random veggie toppings? All are one dollar for each topping."
 	veggiechoice = gets.chomp
-	if veggiechoice == "0"
+	if veggiechoice == 0
 		veggiefee += 0
-	elsif veggiechoice == "1"
+	elsif veggiechoice == 1
 		veggiefee += 1.00
-	else veggiechoice == "2"
+	elsif veggiechoice == 2
 		veggiefee += 2.00
+	elsif veggiechoice == 3
+		veggiefee += 3.00
+	else veggiechoice == 4
+		veggiefee += 4.00
 	end
 
 	meatfee = 0
 puts "would you like 0,1,2,3,or 4 meat toppings?"
 	meatchoice = gets.chomp
-	if meatchoice == "0"
+	if meatchoice == 0
 		meatfee += 0
-	elsif meatchoice == "1"
+	elsif meatchoice == 1
 		meatfee += 1.00
-	elsif meatchoice == "2"
+	elsif meatchoice == 2
 		meatfee += 2.00
-	elsif meatchoice == "3"
+	elsif meatchoice == 3
 		meatfee += 3.00
-	else meatchoice == "4"
+	else meatchoice == 4
 		meatfee += 4.00
 	end
 
@@ -122,7 +126,7 @@ puts "would you like your pizza delivered to your home yes/no?"
 	end
 
 
-puts "What percentage would you like to tip? (e.g. 15)"
+puts 'What percentage would you like to tip? and remember.... tipping is not a place in chine and stands for " To insure propper service" (e.g. 15)'
 tip_input = gets.chomp.to_i 
 tip_percent = tip_input/100
 tip = cost * tip_percent
@@ -133,22 +137,49 @@ salestax = tax * before_taxes.to_f
 
 
 totalcost = before_taxes + tax
-
+#pizzamachine
 pizzamaker = 0
 while pizzamaker < pizzas
-	if pizzas <= 1
-	puts "You ordered #{pizzas} pizza (s), with #{crust_choice}, with #{extracheesechoice} extra cheese,
-	and #{meatchoice} topings of meat one being #{meats.sample}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample} " * pizzas
-	elsif pizzas >= 1
-		puts "SSSSSSSEEEEEEEEEEEEEEMMMMMMMMMMMMMMMMMEEEEEEEE"
-	end
+	if pizzas == 0
+		puts  "NO PIZZA FOR YOU!!!!!!"
+	elsif pizzas == 1 && extracheesechoice  == "no" && extrapepchoice == "no" && veggiechoice == 0 && meatchoice == 0  
+		puts "You ordered #{pizzas} #{sizechoice} pizza, with #{crust_choice},and might i add, a very bland pizza with #{sauces.sample} sauce "
+	elsif pizzas == 1  && extracheesechoice == "yes" && extrapepchoice == "no" && veggiechoice == 0 && meatchoice == 0
+		puts  "You ordered #{pizzas} #{sizechoice} pizza, with #{crust_choice}, with extra cheese, and sauced with #{sauces.sample} "
+	elsif pizzas > 1 && extrapepchoice == "yes" && extrapepchoice == "yes" && veggiechoice == 0 && meatchoice == 0
+		puts "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with extra cheese, and extra pepperoni and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "yes" && veggiechoice == 0 && meatchoice == 0
+		puts "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with extra peperoni, and sauced with #{sauces.sample} "
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 1 && meatchoice == 0
+		puts  "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with #{veggiechoice} #{veggies.sample} topping, and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 2 && meatchoice == 0
+	  	puts  "You ordered #{pizzas} #{sizechoice} pizzas , with #{crust_choice} crust, and #{veggiechoice} #{veggies.sample(2).join(", ")} topping, and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 3 && meatchoice == 0
+	  	puts  "You ordered #{pizzas} #{sizechoice} pizzas , with #{crust_choice} crust, and #{veggiechoice} #{veggies.sample(3).join(", ")} topping, and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 4 && meatchoice == 0
+		puts "You ordered #{pizzas} #{sizechoice} pizzas , with #{crust_choice} crust, and #{veggiechoice} #{veggies.sample(4).join(", ")} topping, and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 1 && meatchoice == 1
+		puts  "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with #{veggiechoice} #{veggies.sample} topping, #{meats.sample} and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 2 && meatchoice == 1
+		puts  "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with #{veggiechoice} #{veggies.sample(2).join(", ")} topping, #{meats.sample} and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 3 && meatchoice == 1
+		puts  "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with #{veggiechoice} #{veggies.sample(3).join(", ")} topping, #{meats.sample} and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 4 && meatchoice == 1
+		puts  "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with #{veggiechoice} #{veggies.sample(4).join(", ")} topping, #{meats.sample} and sauced with #{sauces.sample}"
+	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 1 && meatchoice == 2
+		puts  "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with #{veggiechoice} #{veggies.sample(1).join(", ")} topping, #{meats.sample(2).join(", ")} and sauced with #{sauces.sample}"
+	else pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 2 && meatchoice == 2
+		puts  "You ordered #{pizzas} #{sizechoice} pizzas, with #{crust_choice}, with #{veggiechoice} #{veggies.sample(2).join(", ")} topping, #{meats.sample(2).join(", ")} and sauced with #{sauces.sample}"
+	 end
 	pizzamaker += 1
 end
-
-
+# "You ordered #{pizzas} #{sizechoice} pizza (s), with #{crust_choice}, with #{extracheesechoice} extra cheese,
+		# and #{meatchoice} topings of meat one being #{meats.sample}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample} "
+#match = players.sample(2)
+#"You ordered #{pizzas} #{sizechoice} pizzas , with #{crust_choice} crust, and #{veggiechoice} #{veggies.sample(2).join(", ")} topping, and sauced with #{sauces.sample}"
 puts "your total cost with taxes will be $#{totalcost}."
 
-puts "test"
+
 
 
 # # if pizzas >= 10
