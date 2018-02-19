@@ -160,7 +160,7 @@ puts "would you like your pizza delivered to your home yes/no?"
 	end
 
 
-puts 'What percentage would you like to tip? and remember.... tipping is not a place in chine and stands for " To insure propper service" (e.g. 15)'
+puts "What percentage would you like to tip? and remember.... tipping is not a place in china!"
 tip_input = gets.chomp.to_i 
 tip_percent = tip_input/100
 tip = cost * tip_percent
@@ -173,16 +173,16 @@ salestax = tax * before_taxes.to_f
 totalcost = before_taxes + tax
 #pizzamachine
 pizzamaker = 0
-while pizzamaker <= pizzas
+while pizzamaker < pizzas
 pizzamaker += 1
 	if pizzas == 0 && extracheesechoice == "no" && extracheesechoice == "no" && veggiechoice == 0 && meatchoice == 0
 		puts  "NO PIZZA FOR YOU!!!!!!"
 	elsif pizzas == 1 && extracheesechoice  == "no" && extrapepchoice == "no" && veggiechoice == 0 && meatchoice == 0  
-		puts "Your #{pizzamaker} #{sizechoice} pizza, with #{crust_choice},and might i add, a very bland pizza with #{sauces.sample} sauce "
+		puts "Your #{pizzamaker} #{sizechoice} pizza,with #{crust_choice},and might i add, a very bland pizza with #{sauces.sample} sauce "
 	elsif pizzas == 1  && extracheesechoice == "yes" && extrapepchoice == "no" && veggiechoice == 0 && meatchoice == 0
-		puts  "Your #{pizzamaker} #{sizechoice} pizza, with #{crust_choice}, with extra cheese, and sauced with #{sauces.sample} "
+		puts  "Your #{pizzamaker} #{sizechoice} pizza with #{crust_choice}, with extra cheese, and sauced with #{sauces.sample} "
 	elsif pizzas > 1 && extrapepchoice == "yes" && extrapepchoice == "yes" && veggiechoice == 0 && meatchoice == 0
-		puts "your #{pizzamaker} #{sizechoice} pizzas, with #{crust_choice}, with extra cheese, and extra pepperoni and sauced with #{sauces.sample}"
+		puts "your #{pizzamaker} #{sizechoice} pizzas , with #{crust_choice} with extra cheese, and extra pepperoni and sauced with #{sauces.sample}"
 	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "yes" && veggiechoice == 0 && meatchoice == 0
 		puts "Your #{pizzamaker} #{sizechoice} pizzas, with #{crust_choice}, with extra peperoni, and sauced with #{sauces.sample} "
 	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice == 1 && meatchoice == 0
