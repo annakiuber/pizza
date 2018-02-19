@@ -208,7 +208,22 @@ pizzamaker += 1
 	  	puts  "Your #{pizzamaker} #{sizechoice} pizzas , with #{crust_choice} crust, and #{veggiechoice} random veggies: #{veggies.sample(veggiechoice).join(",")},d with #{sauces.sample}"
 	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "yes" && veggiechoice == 0 && meatchoice > 1
 	  	puts  "Your #{pizzamaker} #{sizechoice} pizzas , with #{crust_choice} crust, #{meatchoice} random meat toppings: #{meats.sample(meatchoice).join(",")}, and sauced with #{sauces.sample}"
-	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice >1 && meatchoice > 1
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  	elsif pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "no" && veggiechoice >1 && meatchoice > 1
 	  	puts  "Your #{pizzamaker} #{sizechoice} pizzas , with #{crust_choice} crust, and #{veggiechoice} random veggies :#{veggies.sample(veggiechoice).join(",")},#{meatchoice} random meat toppings: #{meats.sample(meatchoice).join(",")},and with #{sauces.sample}"
 	elsif pizzas > 1 && extracheesechoice == "yes" && extrapepchoice == "yes" && veggiechoice > 0 && meatchoice > 1
 	  	puts  "Your #{pizzamaker} #{sizechoice} pizzas , with #{crust_choice} crust, and #{veggiechoice} random veggies: #{veggies.sample(veggiechoice).join(",")},#{meatchoice} random meat toppings: #{meats.sample(meatchoice).join(",")}, and sauced with #{sauces.sample}"
@@ -230,7 +245,16 @@ pizzamaker += 1
 	# else pizzas > 1 && extracheesechoice == "no" && extrapepchoice == "yes" && veggiechoice == 0 && meatchoice > 1
 	#   	puts  "Your #{pizzamaker} #{sizechoice} pizzas , with #{crust_choice} crust, #{meatchoice} meat toppings include #{meats.sample(meatchoice).join(",")}, and sauced with #{sauces.sample}"
 
-	 end
+
+
+
+
+
+
+
+
+
+		 end
 end
 # "You ordered #{pizzas} #{sizechoice} pizza (s), with #{crust_choice}, with #{extracheesechoice} extra cheese,
 		# and #{meatchoice} topings of meat one being #{meats.sample}, with #{veggiechoice} veggie toppings one being(#{veggies.sample}), and sauced with #{sauces.sample} "
