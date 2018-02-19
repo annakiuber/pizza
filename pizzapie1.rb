@@ -55,7 +55,15 @@ def pizzaorder
 	puts "how many random pizzas would you like?"
 	pizzas = gets.chomp.to_i
 
+	if pizzas == 0  
+		puts  "NO PIZZA FOR YOU!!!!!!"
+	
+	end
+
+
 	puts "that will be #{pizzas}"
+
+
 
 	sizefee = 0
 	puts "would you like small, medium, or large?"
@@ -171,13 +179,15 @@ salestax = tax * before_taxes.to_f
 
 
 totalcost = before_taxes + tax
+
+
+
+
 #pizzamachine
 pizzamaker = 0
 while pizzamaker < pizzas
 pizzamaker += 1
-	if pizzas == 0 && extracheesechoice == "no" && extracheesechoice == "no" && veggiechoice == 0 && meatchoice == 0
-		puts  "NO PIZZA FOR YOU!!!!!!"
-	elsif pizzas == 1 && extracheesechoice  == "no" && extrapepchoice == "no" && veggiechoice == 0 && meatchoice == 0  
+	if pizzas == 1 && extracheesechoice  == "no" && extrapepchoice == "no" && veggiechoice == 0 && meatchoice == 0  
 		puts "Your #{pizzamaker} #{sizechoice} pizza,with #{crust_choice},and might i add, a very bland pizza with #{sauces.sample} sauce "
 	elsif pizzas == 1  && extracheesechoice == "yes" && extrapepchoice == "no" && veggiechoice == 0 && meatchoice == 0
 		puts  "Your #{pizzamaker} #{sizechoice} pizza with #{crust_choice}, with extra cheese, and sauced with #{sauces.sample} "
