@@ -46,6 +46,7 @@ def pizzaorder
 
 		wings = 10 for 10.00
 
+		chef salad = 5.00
 
 		deliveryfee = 5.00
 	}
@@ -152,11 +153,18 @@ cost = 10.00 * pizza
 wingfee = 0
 puts "would you like to add 10 wings to your order?"
 	wingchoice = gets.chomp
-	if wingchoice =="yes"
+	if wingchoice == "yes"
 		wingfee = 10.00
 	else wingfee = 0
 	end
 
+saladfee = 0
+puts "would you like to add a chef salad to your order?"
+	saladchoice = gets.chomp
+	if saladchoice == "yes"
+		saladfee = 5.00
+	else saldfee6 = 0
+	end
 
 fee = 0
 puts "would you like your pizza delivered to your home yes/no?"
@@ -174,7 +182,7 @@ tip_percent = tip_input/100
 tip = cost * tip_percent
 
 tax = 0.07
-before_taxes = cost + fee + crustfee + extracheesefee + veggiefee + meatfee + extrapepfee + sizefee + wingfee
+before_taxes = cost + fee + crustfee + extracheesefee + veggiefee + meatfee + extrapepfee + sizefee + wingfee + saladfee
 salestax = tax * before_taxes.to_f
 
 
